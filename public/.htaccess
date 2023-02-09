@@ -14,7 +14,7 @@
 	RewriteRule ^index\.html$ - [L]
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
-	RewriteCond %{REQUEST_URI} ^(?!\/public\/api(\/|$))(.*)
+	RewriteCond %{REQUEST_URI} ^(?!/api(\/|$))(.*)
 	RewriteRule ^ index.html [L]
 	
 #	RewriteRule (.*) http://www.example.com/$1?vardump&thereq=%{DOCUMENT_ROOT}%{REQUEST_URI}/index.html [R=302,L,QSA]

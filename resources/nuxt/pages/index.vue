@@ -13,9 +13,8 @@
 <script>
 export default {
   name: "IndexPage",
-  async asyncData({ app }) {
-        const users = await app.$axios.$get('testAPI');
-        return { users };
+  async created() {
+        this.users = await this.$axios.$get('testAPI');
     },
     data() {
       return {

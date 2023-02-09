@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{291:function(n,e,t){"use strict";t.r(e);var r={name:"idPage"},l=t(46),component=Object(l.a)(r,(function(){var n=this,e=n._self._c;return e("div",[e("p",[n._v("ID Page: "+n._s(n.$route.params.id))])])}),[],!1,null,null,null);e.default=component.exports}}]);
