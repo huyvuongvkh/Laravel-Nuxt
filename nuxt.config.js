@@ -1,4 +1,5 @@
 export default {
+    target: 'static',
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: "nuxt",
@@ -33,7 +34,7 @@ export default {
     modules: ["@nuxtjs/axios"],
 
     axios: {
-        baseURL: "http://lr.lc/api/",
+        baseURL: process.env.APP_API_URL,
     },
 
     generate: {

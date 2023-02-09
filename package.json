@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate; rsync -avz --delete --exclude '.htaccess' public/index.php public/robots.txt resources/pages/ public/"
+    "dev": "nuxt --dotenv .env",
+    "build": "nuxt build --dotenv .env",
+    "start": "nuxt start --dotenv .env",
+    "generate": "nuxt generate --dotenv .env;  rsync -avz --delete --exclude '.htaccess' public/index.php public/robots.txt resources/pages/ public/"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
