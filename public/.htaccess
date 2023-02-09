@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+#	RewriteBase /
+	DirectorySlash Off
+	
+	# Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+	RewriteRule ^index\.html$ - [L]
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_URI} ^(?!\/public\/api(\/|$))(.*)
+	RewriteRule ^ index.html [L]
+	
+#	RewriteRule (.*) http://www.example.com/$1?vardump&thereq=%{DOCUMENT_ROOT}%{REQUEST_URI}/index.html [R=302,L,QSA]
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f [NC]
+	RewriteRule ^ %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html [END]
+	
+	RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [NC]
+	RewriteRule ^ %{DOCUMENT_ROOT}%{REQUEST_URI} [END]
+	
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    RewriteRule    (.*) index.php    [L]
+</IfModule>

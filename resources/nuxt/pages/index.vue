@@ -4,9 +4,9 @@
     <ul>
         <li v-for="(user,index) in users" :key="index">
             {{ user }}
+            <nuxt-link :to="`/user/${index}`">click</nuxt-link>
          </li>
     </ul>
-    <nuxt-link to="hello">hello</nuxt-link>
   </div>
 </template>
 

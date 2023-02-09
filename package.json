@@ -6,7 +6,7 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate; rsync -avz --delete --exclude public/.htaccess public/index.php public/robots.txt public/*.html resources/pages/ public/"
+    "generate": "nuxt generate; rsync -avz --delete --exclude '.htaccess' public/index.php public/robots.txt resources/pages/ public/"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.13.6",
