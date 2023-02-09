@@ -18,3 +18,10 @@ yarn-error.log
 /.vscode
 /.nuxt
 /resources/pages
+composer.lock
+package-lock.json
+public/
+!public/.htaccess
+!public/index.php
+!public/robots.txt
+!public/favicon.ico
